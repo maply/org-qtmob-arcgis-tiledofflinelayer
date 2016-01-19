@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/org/qtmob/arcgis/tiledofflinelayer">
+        <file>qmldir</file>
+        <file>TiledOfflineLayer.qml</file>
+    </qresource>
+</RCC>

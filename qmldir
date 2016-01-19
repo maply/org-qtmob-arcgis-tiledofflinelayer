@@ -1,0 +1,4 @@
+module org.qtmob.arcgis.tiledofflinelayer
+
+TiledOfflineLayer 1.0 TiledOfflineLayer.qml
+
