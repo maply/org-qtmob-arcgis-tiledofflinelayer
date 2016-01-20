@@ -4,8 +4,18 @@ import ArcGIS.Runtime 10.26
 TiledMapServiceLayer {
     id: tiledOfflineLayer
 
+
+    onRequestTile: {
+        var url = (Qt.platform.os === "android" ? "qrc:/" : "") + tilesResource + "/" + level + "/" + col + "/" + row + "." + tileFormat
+        setTile(level, col, row, url)
+    }
+    onCancelTile: {
+
+    }
+
     property string tilesResource: "tiles"
     property string tileFormat: "png"
+
     minScale: 500000000
     maxScale: 1000
     visible: true
@@ -51,12 +61,5 @@ TiledMapServiceLayer {
             LOD {level: 15; resolution: 4.77731426794937; scale: 18055.954822},
             LOD {level: 16; resolution: 2.388657133974685; scale: 9027.977411}
         ]
-    }
-    onRequestTile: {
-        var url = (Qt.platform.os === "android" ? "qrc:/" : "") + tilesResource + "/" + level + "/" + col + "/" + row + "." + tileFormat
-        setTile(level, col, row, url)
-    }
-    onCancelTile: {
-
     }
 }
