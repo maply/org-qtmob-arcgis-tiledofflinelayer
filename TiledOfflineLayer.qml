@@ -4,6 +4,8 @@ import ArcGIS.Runtime 10.26
 TiledMapServiceLayer {
     id: tiledOfflineLayer
 
+    property string tilesResource: "tiles"
+    property string tileFormat: "png"
 
     onRequestTile: {
         var url = (Qt.platform.os === "android" ? "qrc:/" : "") + tilesResource + "/" + level + "/" + col + "/" + row + "." + tileFormat;
@@ -12,9 +14,6 @@ TiledMapServiceLayer {
     onCancelTile: {
 
     }
-
-    property string tilesResource: "tiles"
-    property string tileFormat: "png"
 
     minScale: 500000000
     maxScale: 1000
