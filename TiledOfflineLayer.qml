@@ -7,7 +7,6 @@ TiledMapServiceLayer {
 
     onRequestTile: {
         var url = (Qt.platform.os === "android" ? "qrc:/" : "") + tilesResource + "/" + level + "/" + col + "/" + row + "." + tileFormat;
-        print(url);
         setTile(level, col, row, url);
     }
     onCancelTile: {
